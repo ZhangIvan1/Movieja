@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-@Document(collation = "movies")
+@Document(collection = "movies")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,5 +24,6 @@ public class Movie {
     private ArrayList<String> genres;
     private String poster;
     private ArrayList<String> backdrops;
+    @DocumentReference
     private ArrayList<Review> reviewIds;
 }
